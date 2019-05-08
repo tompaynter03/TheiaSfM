@@ -251,4 +251,4 @@ if(BUILD_LIB_theia_util)
   install(TARGETS theia_util ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
 endif(BUILD_LIB_theia_util)
 
-install(DIRECTORY . DESTINATION include FILES_MATCHING PATTERN "*.h*")
+install(DIRECTORY . DESTINATION include/theia FILES_MATCHING PATTERN "*.h*")
