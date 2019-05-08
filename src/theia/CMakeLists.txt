@@ -72,7 +72,8 @@ if(BUILD_LIB_theia_image)
     image/image_cache.cc
     image/image.cc
     image/keypoint_detector/sift_detector.cc)
-  target_include_directories(theia_image PUBLIC ${INCLUDE_DIRECTORIES})
+  target_include_directories(theia_image PRIVATE ${INCLUDE_DIRECTORIES})
+  install(TARGETS theia_image ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
 endif(BUILD_LIB_theia_image)
 
 if(BUILD_LIB_theia_io)
@@ -93,7 +94,8 @@ if(BUILD_LIB_theia_io)
     io/write_keypoints_and_descriptors.cc
     io/write_nvm_file.cc
     io/write_ply_file.cc)
-  target_include_directories(theia_io PUBLIC ${INCLUDE_DIRECTORIES})
+  target_include_directories(theia_io PRIVATE ${INCLUDE_DIRECTORIES})
+  install(TARGETS theia_io ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
 endif(BUILD_LIB_theia_io)
 
 if(BUILD_LIB_theia_matching)
@@ -108,7 +110,8 @@ if(BUILD_LIB_theia_matching)
     matching/guided_epipolar_matcher.cc
     matching/in_memory_features_and_matches_database.cc
     matching/rocksdb_features_and_matches_database.cc)
-  target_include_directories(theia_matching PUBLIC ${INCLUDE_DIRECTORIES})
+  target_include_directories(theia_matching PRIVATE ${INCLUDE_DIRECTORIES})
+  install(TARGETS theia_matching ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
 endif(BUILD_LIB_theia_matching)
 
 if(BUILD_LIB_theia_math)
@@ -123,7 +126,8 @@ if(BUILD_LIB_theia_math)
     math/probability/sequential_probability_ratio.cc
     math/qp_solver.cc
     math/rotation.cc)
-  target_include_directories(theia_math PUBLIC ${INCLUDE_DIRECTORIES})
+  target_include_directories(theia_math PRIVATE ${INCLUDE_DIRECTORIES})
+  install(TARGETS theia_math ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
 endif(BUILD_LIB_theia_math)
 
 if(BUILD_LIB_theia_sfm)
@@ -223,7 +227,8 @@ if(BUILD_LIB_theia_sfm)
     sfm/view_graph/view_graph.cc
     sfm/view.cc
     sfm/visibility_pyramid.cc)
-  target_include_directories(theia_sfm PUBLIC ${INCLUDE_DIRECTORIES})
+  target_include_directories(theia_sfm PRIVATE ${INCLUDE_DIRECTORIES})
+  install(TARGETS theia_sfm ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
 endif(BUILD_LIB_theia_sfm)
 
 if(BUILD_LIB_theia_solvers)
@@ -231,7 +236,8 @@ if(BUILD_LIB_theia_solvers)
     solvers/exhaustive_sampler.cc
     solvers/prosac_sampler.cc
     solvers/random_sampler.cc)
-  target_include_directories(theia_solvers PUBLIC ${INCLUDE_DIRECTORIES})
+  target_include_directories(theia_solvers PRIVATE ${INCLUDE_DIRECTORIES})
+  install(TARGETS theia_solvers ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
 endif(BUILD_LIB_theia_solvers)
 
 if(BUILD_LIB_theia_util)
@@ -241,5 +247,8 @@ if(BUILD_LIB_theia_util)
     util/stringprintf.cc
     util/threadpool.cc
     util/timer.cc)
-  target_include_directories(theia_util PUBLIC ${INCLUDE_DIRECTORIES})
+  target_include_directories(theia_util PRIVATE ${INCLUDE_DIRECTORIES})
+  install(TARGETS theia_util ARCHIVE DESTINATION lib LIBRARY DESTINATION lib)
 endif(BUILD_LIB_theia_util)
+
+install(DIRECTORY . DESTINATION include FILES_MATCHING PATTERN "*.h*")
