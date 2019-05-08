@@ -51,6 +51,10 @@ option(BUILD_LIB_theia_util     "Build the util library."     OFF)
 
 option(INCLUDE_DIRECTORIES "Include directories for external libraries.")
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 #Prepend include directories local to this repo.
 list(INSERT 
   INCLUDE_DIRECTORIES 
@@ -137,7 +141,7 @@ if(BUILD_LIB_theia_sfm)
     sfm/camera/pinhole_camera_model.cc
     sfm/camera/pinhole_radial_tangential_camera_model.cc
     sfm/camera/projection_matrix_utils.cc
-    sfm/colorize_reconstruction.cc
+    # sfm/colorize_reconstruction.cc
     sfm/estimate_track.cc
     sfm/estimate_twoview_info.cc
     sfm/estimators/estimate_absolute_pose_with_known_orientation.cc
@@ -154,8 +158,8 @@ if(BUILD_LIB_theia_sfm)
     sfm/estimators/estimate_uncalibrated_relative_pose.cc
     # sfm/exif_reader.cc
     sfm/extract_maximally_parallel_rigid_subgraph.cc
-    sfm/feature_extractor_and_matcher.cc
-    sfm/feature_extractor.cc
+    # sfm/feature_extractor_and_matcher.cc
+    # sfm/feature_extractor.cc
     sfm/filter_view_graph_cycles_by_rotation.cc
     sfm/filter_view_pairs_from_orientation.cc
     sfm/filter_view_pairs_from_relative_translation.cc
@@ -196,7 +200,7 @@ if(BUILD_LIB_theia_sfm)
     sfm/pose/three_point_relative_pose_partial_rotation.cc
     sfm/pose/two_point_pose_partial_rotation.cc
     sfm/pose/util.cc
-    sfm/reconstruction_builder.cc
+    # sfm/reconstruction_builder.cc
     sfm/reconstruction_estimator_utils.cc
     sfm/reconstruction_estimator.cc
     sfm/reconstruction.cc
@@ -213,7 +217,7 @@ if(BUILD_LIB_theia_sfm)
     sfm/triangulation/triangulation.cc
     sfm/two_view_match_geometric_verification.cc
     sfm/twoview_info.cc
-    sfm/undistort_image.cc
+    # sfm/undistort_image.cc
     sfm/view_graph/orientations_from_maximum_spanning_tree.cc
     sfm/view_graph/remove_disconnected_view_pairs.cc
     sfm/view_graph/view_graph.cc
